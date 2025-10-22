@@ -1,52 +1,53 @@
-"use client";
+'use client';
 
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from 'react';
 
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
-import bg_image from "@/public/images/bgImage.png";
-import infinity from "@/public/images/infinity.png";
-import avatar from "@/public/images/avatarPortfolio.png";
-import astrocat from "@/public/images/astrocat-c96b6ce0d913.png";
-import loader from "@/loader.gif";
+import bg_image from '@/public/images/bgImage.png';
+import infinity from '@/public/images/infinity.png';
+import avatar from '@/public/images/avatarPortfolio.png';
+import astrocat from '@/public/images/astrocat-c96b6ce0d913.png';
+import loader from '@/loader.gif';
 
-import { skills } from "./skillsData";
+import { skills } from './skillsData';
 
-import { HoverEffect } from "../UI/CardHoverEffect";
-import { FloatingDock } from "../UI/Floating-dock";
-import { FlipWords } from "../UI/flip-words";
-import EncryptButton from "../UI/Encrypt-Button";
-import { cn } from "@/utils/cn";
-import OverlayCard from "../UI/overlay-video";
+import { HoverEffect } from '../UI/CardHoverEffect';
+import { FloatingDock } from '../UI/Floating-dock';
+import { FlipWords } from '../UI/flip-words';
+import EncryptButton from '../UI/Encrypt-Button';
+import { cn } from '@/utils/cn';
+import OverlayCard from '../UI/overlay-video';
 
-import { SiLeetcode } from "react-icons/si";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { BsTwitterX } from "react-icons/bs";
-import { IoCallOutline } from "react-icons/io5";
-import { MdEmail } from "react-icons/md";
-import { CgCodeSlash } from "react-icons/cg";
-import { LuBrainCircuit } from "react-icons/lu";
+import { SiLeetcode } from 'react-icons/si';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { BsTwitterX } from 'react-icons/bs';
+import { IoCallOutline } from 'react-icons/io5';
+import { MdEmail } from 'react-icons/md';
+import { CgCodeSlash } from 'react-icons/cg';
+import { BiBitcoin } from 'react-icons/bi';
+import { LuBrainCircuit } from 'react-icons/lu';
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from 'framer-motion';
 
 interface FadeInOptions {
-  direction: "up" | "down" | "left" | "right";
+  direction: 'up' | 'down' | 'left' | 'right';
   delay: number;
 }
 
 const fadeIn = ({ direction, delay }: FadeInOptions) => {
   return {
     hidden: {
-      y: direction === "up" ? 70 : direction === "down" ? -40 : 0,
-      x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
+      y: direction === 'up' ? 70 : direction === 'down' ? -40 : 0,
+      x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
     },
     show: {
       y: 0,
       x: 0,
       opacity: 1,
       transition: {
-        type: "tween",
+        type: 'tween',
         duration: 1,
         delay: delay,
         ease: [0.25, 0.25, 0.25, 0.75],
@@ -60,14 +61,14 @@ interface MousePosition {
   y: number;
 }
 
-type CursorVariant = "default" | "text";
+type CursorVariant = 'default' | 'text';
 
 const HeroSection: FC = () => {
   const [mousePosition, setMousePosition] = useState<MousePosition>({
     x: 0,
     y: 0,
   });
-  const [cursorVariant, setCursorVariant] = useState<CursorVariant>("default");
+  const [cursorVariant, setCursorVariant] = useState<CursorVariant>('default');
 
   useEffect(() => {
     // const mouseMove = (e: MouseEvent) => {
@@ -83,10 +84,10 @@ const HeroSection: FC = () => {
     //   window.removeEventListener("mousemove", mouseMove);
     // };
 
-    const cursor = document.querySelector<HTMLElement>(".cursor");
+    const cursor = document.querySelector<HTMLElement>('.cursor');
 
     if (cursor) {
-      document.addEventListener("mousemove", (e: MouseEvent) => {
+      document.addEventListener('mousemove', (e: MouseEvent) => {
         cursor.style.left = `${e.clientX}px`;
         cursor.style.top = `${e.clientY}px`;
       });
@@ -104,13 +105,13 @@ const HeroSection: FC = () => {
       width: 150,
       x: mousePosition.x - 75,
       y: mousePosition.y - 75,
-      backgroundColor: "#06f9ff",
-      mixBlendMode: "difference",
+      backgroundColor: '#06f9ff',
+      mixBlendMode: 'difference',
     },
   };
 
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
+  const textEnter = () => setCursorVariant('text');
+  const textLeave = () => setCursorVariant('default');
 
   const [loading, setLoading] = useState(true);
 
@@ -157,14 +158,19 @@ const HeroSection: FC = () => {
                   Vijay Modak
                 </h1>
 
-                <EncryptButton buttonText="Resume" />
+                <EncryptButton
+                  buttonText="Resume"
+                  driveLink={
+                    'https://drive.google.com/file/d/1_X927k4RvdKw1Vlo6V7FbaAOFOoMNeBF/view?usp=drive_link'
+                  }
+                />
               </div>
 
               <div className="flex justify-between gap-48 text-white">
                 <motion.div
-                  variants={fadeIn({ direction: "right", delay: 0.4 })}
+                  variants={fadeIn({ direction: 'right', delay: 0.4 })}
                   initial="hidden"
-                  whileInView={"show"}
+                  whileInView={'show'}
                   viewport={{ once: true, amount: 0.1 }}
                   className="flex flex-col mx-6 py-8 mt-[24vh] z-20"
                 >
@@ -181,13 +187,13 @@ const HeroSection: FC = () => {
                   </p>
 
                   <div className="mt-10 text-2xl md:text-3xl font-extrabold">
-                    <FlipWords words={["Web Developer", "CAD Designer"]} />
+                    <FlipWords words={['Web Developer', 'CAD Designer']} />
                   </div>
                 </motion.div>
                 <motion.div
-                  variants={fadeIn({ direction: "left", delay: 0.4 })}
+                  variants={fadeIn({ direction: 'left', delay: 0.4 })}
                   initial="hidden"
-                  whileInView={"show"}
+                  whileInView={'show'}
                   viewport={{ once: false, amount: 0.1 }}
                   className="hidden md:flex"
                 >
@@ -200,13 +206,13 @@ const HeroSection: FC = () => {
               </div>
 
               <motion.div
-                variants={fadeIn({ direction: "up", delay: 0.4 })}
+                variants={fadeIn({ direction: 'up', delay: 0.4 })}
                 initial="hidden"
-                whileInView={"show"}
+                whileInView={'show'}
                 viewport={{ once: true, amount: 0.1 }}
                 className="flex items-center mt-28 md:mt-20 lg:mt-[4vh] flex-wrap gap-2 mx-4"
               >
-                <Link href={"https://github.com/vashu-1"}>
+                <Link href={'https://github.com/vashu-1'}>
                   <div className="flex justify-center items-center h-[55px] w-[55px] bg-gradient-to-tr from-transparent via-transparent to-gray-500 border border-gray-500 rounded-xl text-gray-400 relative cursor-pointer hover:shadow-sm hover:border-sky-600 hover:to-sky-800  hover:text-white hover:shadow-sky-400 transition ease-in-out delay-100 ">
                     <FaGithub className="h-6 w-6 " />
                   </div>
@@ -217,7 +223,7 @@ const HeroSection: FC = () => {
                 </div>
                 <Link
                   href={
-                    "https://www.linkedin.com/in/vijay-kumar-modak-3497632a8/"
+                    'https://www.linkedin.com/in/vijay-kumar-modak-3497632a8/'
                   }
                 >
                   <div className="flex justify-center items-center h-[55px] w-[55px] bg-gradient-to-tr from-transparent via-transparent to-gray-500 border border-gray-500 rounded-xl text-gray-400 relative cursor-pointer hover:shadow-sm hover:border-sky-600 hover:to-sky-800  hover:text-white hover:shadow-sky-400 transition ease-in-out delay-100 ">
@@ -228,7 +234,7 @@ const HeroSection: FC = () => {
                   <p className="h-[.3px] w-full bg-slate-600  absolute"></p>
                   <p className="h-1 w-1 bg-slate-500 rounded-full"></p>
                 </div>
-                <Link href={"https://www.instagram.com/vashu_2854/"}>
+                <Link href={'https://www.instagram.com/vashu_2854/'}>
                   <div className="flex justify-center items-center h-[55px] w-[55px] bg-gradient-to-tr from-transparent via-transparent to-gray-500 border border-gray-500 rounded-xl text-gray-400 relative cursor-pointer hover:shadow-sm hover:border-sky-600 hover:to-sky-800  hover:text-white hover:shadow-sky-400 transition ease-in-out delay-100 ">
                     <FaInstagram className="h-6 w-6 " />
                   </div>
@@ -237,7 +243,7 @@ const HeroSection: FC = () => {
                   <p className="h-[.3px] w-full bg-slate-600  absolute"></p>
                   <p className="h-1 w-1 bg-slate-500 rounded-full"></p>
                 </div>
-                <Link href={""}>
+                <Link href={''}>
                   <div className="flex justify-center items-center h-[55px] w-[55px] bg-gradient-to-tr from-transparent via-transparent to-gray-500 border border-gray-500 rounded-xl text-gray-400 relative cursor-pointer hover:shadow-sm hover:border-sky-600 hover:to-sky-800  hover:text-white hover:shadow-sky-400 transition ease-in-out delay-100 ">
                     <SiLeetcode className="h-6 w-6 " />
                   </div>
@@ -249,9 +255,9 @@ const HeroSection: FC = () => {
           {/* ABOUT */}
 
           <motion.section
-            variants={fadeIn({ direction: "up", delay: 0.4 })}
+            variants={fadeIn({ direction: 'up', delay: 0.4 })}
             initial="hidden"
-            whileInView={"show"}
+            whileInView={'show'}
             viewport={{ once: false, amount: 0.1 }}
             className="h-fit md:h-[100vh] w-full px-8 py-10 md:py-0 lg:pl-40 lg:pr-24 text-white"
           >
@@ -326,21 +332,21 @@ const HeroSection: FC = () => {
             <p className="hidden md:flex h-[1px] w-[16vw] bg-sky-500 mt-2 ml-60"></p>
             <div className="flex flex-wrap justify-center items-center gap-10 mt-10 md:mt-20">
               <motion.div
-                variants={fadeIn({ direction: "up", delay: 0.2 })}
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
                 initial="hidden"
-                whileInView={"show"}
+                whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
                 className="max-w-xs w-full"
               >
                 <div
                   className={cn(
-                    "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent border-neutral-800 hover:border-sky-900 ",
+                    'group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent border-neutral-800 hover:border-sky-900 ',
 
                     // Preload hover image by setting it in a pseudo-element
-                    "before:bg-[url(https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]",
-                    "hover:bg-[url(https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)]",
+                    'before:bg-[url(https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]',
+                    'hover:bg-[url(https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)]',
                     "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50",
-                    "transition-all duration-500"
+                    'transition-all duration-500'
                   )}
                 >
                   <div className="w-full flex justify-center absolute mb-16 -ml-4 ">
@@ -392,21 +398,21 @@ const HeroSection: FC = () => {
                 </div>
               </motion.div> */}
               <motion.div
-                variants={fadeIn({ direction: "up", delay: 0.2 })}
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
                 initial="hidden"
-                whileInView={"show"}
+                whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
                 className="max-w-xs w-full"
               >
                 <div
                   className={cn(
-                    "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent border-neutral-800 hover:border-sky-900",
+                    'group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent border-neutral-800 hover:border-sky-900',
 
                     // Preload hover image by setting it in a pseudo-element
-                    "before:bg-[url(https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]",
-                    "hover:bg-[url(https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)]",
+                    'before:bg-[url(https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]',
+                    'hover:bg-[url(https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)]',
                     "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50",
-                    "transition-all duration-500"
+                    'transition-all duration-500'
                   )}
                 >
                   <div className="w-full flex justify-center absolute mb-20 -ml-4">
@@ -431,9 +437,9 @@ const HeroSection: FC = () => {
           {/* SKILLS */}
 
           <motion.div
-            variants={fadeIn({ direction: "up", delay: 0.4 })}
+            variants={fadeIn({ direction: 'up', delay: 0.4 })}
             initial="hidden"
-            whileInView={"show"}
+            whileInView={'show'}
             viewport={{ once: false, amount: 0.1 }}
             className="flex justify-center items-center flex-col mt-28"
           >
@@ -482,74 +488,121 @@ const HeroSection: FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-10 mt-20 px-6 lg:px-40">
               <motion.div
-                variants={fadeIn({ direction: "up", delay: 0.2 })}
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
                 initial="hidden"
-                whileInView={"show"}
+                whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
               >
-                <Link href={"https://brainwave-olive-alpha.vercel.app/"}>
+                <Link href={'https://shopkart-1-yz9u.onrender.com/'}>
                   <OverlayCard
-                    image="/images/bgImage.png"
-                    video="/video/brainwave.mp4"
+                    image="https://d33609liqwio9r.cloudfront.net/2025-10-22T13:08:35.157Z-ecomm2.jpg"
+                    video="../../../video/ecommerce2 (1).mp4"
+                    heading="ShopKart"
+                    description="An MERN based e-commerce platform for online shopping"
+                  />
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
+                initial="hidden"
+                whileInView={'show'}
+                viewport={{ once: false, amount: 0.1 }}
+              >
+                <Link href={'https://mern-chat-frontend-4r6p.onrender.com/'}>
+                  <OverlayCard
+                    image="https://d33609liqwio9r.cloudfront.net/2025-10-20T19:22:13.471Z-representation-user-experience-interface-design.jpg"
+                    video="../../../video/chatapp (1).mp4"
+                    heading="MERN Chat App"
+                    description="A real-time chat application using MERN stack"
+                  />
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
+                initial="hidden"
+                whileInView={'show'}
+                viewport={{ once: false, amount: 0.1 }}
+              >
+                <Link
+                  href={'https://food-delivery-frontend-aze9.onrender.com/'}
+                >
+                  <OverlayCard
+                    image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    video="../../../video/Food-Flick - Google Chrome 2025-10-21 01-05-16 (1).mp4"
+                    heading="Food Delivery"
+                    description="An online food delivery application with admin panel"
+                  />
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
+                initial="hidden"
+                whileInView={'show'}
+                viewport={{ once: false, amount: 0.1 }}
+              >
+                <Link href={'https://brainwave-olive-alpha.vercel.app/'}>
+                  <OverlayCard
+                    image="https://d33609liqwio9r.cloudfront.net/2025-10-20T19:50:26.610Z-technology-integrated-everyday-life.jpg"
+                    video="../../../video/Brainwave - Google Chrome 2025-10-20 18-30-09 (1).mp4"
                     heading="Brainwave"
                     description="An AI-powered website for chat app"
                   />
                 </Link>
               </motion.div>
               <motion.div
-                variants={fadeIn({ direction: "up", delay: 0.2 })}
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
                 initial="hidden"
-                whileInView={"show"}
+                whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
               >
-                <Link href={"https://github.com/vashu-1/instaclone"}>
+                <Link href={'https://gym-sigma-mauve.vercel.app/'}>
                   <OverlayCard
-                    image="/images/bgImage.png"
-                    video="/video/instagram clone.mp4"
-                    heading="Instagram Clone"
-                    description="A clone of Instagram made by MERN stack"
+                    image="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    video="../../../video/Gymate - Google Chrome 2025-10-20 18-28-26 (1).mp4"
+                    heading="Gymate"
+                    description="A React based fitness website to track workouts and nutrition"
                   />
                 </Link>
               </motion.div>
               <motion.div
-                variants={fadeIn({ direction: "up", delay: 0.2 })}
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
                 initial="hidden"
-                whileInView={"show"}
+                whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
               >
-                <Link href={"https://github.com/vashu-1/IIC-7.0"}>
+                <Link href={'https://md-computers-8vgu.vercel.app/'}>
                   <OverlayCard
-                    image="/images/bgImage.png"
-                    video="/video/iic 7.0.mp4"
-                    heading="IIC 7.0"
-                    description="A webpage design for club of BIT Sindri"
+                    image="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    video="../../../video/mdcomputers (1).mp4"
+                    heading="MD Computers"
+                    description="An e-commerce website for computer parts and accessories"
                   />
                 </Link>
               </motion.div>
               <motion.div
-                variants={fadeIn({ direction: "up", delay: 0.2 })}
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
                 initial="hidden"
-                whileInView={"show"}
+                whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
               >
-                <Link href={"https://vashu-1.github.io/College/"}>
+                <Link href={'https://rest-sample1.vercel.app/'}>
                   <OverlayCard
-                    image="/images/bgImage.png"
-                    video="/video/College.mp4"
-                    heading="College"
-                    description="This website allow to explore the world largest university"
+                    image="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    video="../../../video/Chili & Chaat Restaurant - Modern React.js Frontend Restaurant Website - Google Chrome 2025-10-20 18-29-26 (1).mp4"
+                    heading="Chili & Chaat"
+                    description="A React based landing restaurant website for online food ordering"
                   />
                 </Link>
               </motion.div>
               <motion.div
-                variants={fadeIn({ direction: "up", delay: 0.2 })}
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
                 initial="hidden"
-                whileInView={"show"}
+                whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
               >
-                <Link href={"https://vashu-1.github.io/IIC_6.0/"}>
+                <Link href={'https://vashu-1.github.io/IIC_6.0/'}>
                   <OverlayCard
-                    image="/images/bgImage.png"
+                    image="https://d33609liqwio9r.cloudfront.net/2025-10-22T19:28:36.893Z-051510382ef119751713d8b58c992856.jpg"
                     video="/video/iic 6.0.mp4"
                     heading="IIC 6.0"
                     description="A Frontend project contains the web design of club in BIT sindri"
@@ -557,17 +610,17 @@ const HeroSection: FC = () => {
                 </Link>
               </motion.div>
               <motion.div
-                variants={fadeIn({ direction: "up", delay: 0.2 })}
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
                 initial="hidden"
-                whileInView={"show"}
+                whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
               >
-                <Link href={"https://github.com/vashu-1/Space-Craft.git"}>
+                <Link href={'https://rest-sample2.vercel.app/'}>
                   <OverlayCard
-                    image="/images/bgImage.png"
-                    video="/video/space website.mp4"
-                    heading="SpaceCraft"
-                    description="A Frontend project showcasing future of Space Tourism"
+                    image="https://d33609liqwio9r.cloudfront.net/2025-10-20T19:52:26.255Z-restaurant-interior.jpg"
+                    video="../../../video/Tomato - Google Chrome 2025-10-20 18-23-48 (1).mp4"
+                    heading="Tomato"
+                    description="A Frontend project for a restaurant website"
                   />
                 </Link>
               </motion.div>
@@ -580,7 +633,7 @@ const HeroSection: FC = () => {
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
             >
-              {" "}
+              {' '}
               <span>Let&apos;s </span>
               <span className="flex justify-center items-center">
                 W
@@ -652,33 +705,33 @@ export default HeroSection;
 
 const links = [
   {
-    title: "Github",
+    title: 'Github',
     icon: (
       <FaGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "https://github.com/vashu-1",
+    href: 'https://github.com/vashu-1',
   },
 
   {
-    title: "LinkedIn",
+    title: 'LinkedIn',
     icon: (
       <FaLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "https://www.linkedin.com/in/vijay-kumar-modak-3497632a8/",
+    href: 'https://www.linkedin.com/in/vijay-kumar-modak-3497632a8/',
   },
   {
-    title: "Instagram",
+    title: 'Instagram',
     icon: (
       <FaInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "https://www.instagram.com/vashu_2854/",
+    href: 'https://www.instagram.com/vashu_2854/',
   },
 
   {
-    title: "Twitter",
+    title: 'Twitter',
     icon: (
       <BsTwitterX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "#",
+    href: '#',
   },
 ];
