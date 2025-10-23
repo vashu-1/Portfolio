@@ -493,7 +493,7 @@ const HeroSection: FC = () => {
                 whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
               >
-                <Link href={'https://shopkart-1-yz9u.onrender.com/'}>
+                <Link href={'https://shopkart-2025-frontend.onrender.com/'}>
                   <OverlayCard
                     image="https://d33609liqwio9r.cloudfront.net/2025-10-22T13:08:35.157Z-ecomm2.jpg"
                     video="../../../video/ecommerce2 (1).mp4"
