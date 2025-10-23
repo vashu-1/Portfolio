@@ -161,7 +161,7 @@ const HeroSection: FC = () => {
                 <EncryptButton
                   buttonText="Resume"
                   driveLink={
-                    'https://drive.google.com/file/d/1_X927k4RvdKw1Vlo6V7FbaAOFOoMNeBF/view?usp=drive_link'
+                    'https://drive.google.com/file/d/1Fj_E3QtxYwwRaIdIq9iBHBNq9YoC7s5d/view?usp=drive_link'
                   }
                 />
               </div>
