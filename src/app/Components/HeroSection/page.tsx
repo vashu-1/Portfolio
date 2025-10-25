@@ -499,6 +499,7 @@ const HeroSection: FC = () => {
                     video="../../../video/ecommerce2 (1).mp4"
                     heading="ShopKart"
                     description="An MERN based e-commerce platform for online shopping"
+                    githubUrl="https://github.com/vashu-1/ShopKart-2025"
                   />
                 </Link>
               </motion.div>
@@ -514,6 +515,7 @@ const HeroSection: FC = () => {
                     video="../../../video/chatapp (1).mp4"
                     heading="MERN Chat App"
                     description="A real-time chat application using MERN stack"
+                    githubUrl="https://github.com/vashu-1/MERN-Chat"
                   />
                 </Link>
               </motion.div>
@@ -531,6 +533,7 @@ const HeroSection: FC = () => {
                     video="../../../video/Food-Flick - Google Chrome 2025-10-21 01-05-16 (1).mp4"
                     heading="Food Delivery"
                     description="An online food delivery application with admin panel"
+                    githubUrl="https://github.com/vashu-1/Food-Delivery"
                   />
                 </Link>
               </motion.div>
@@ -546,6 +549,7 @@ const HeroSection: FC = () => {
                     video="../../../video/Brainwave - Google Chrome 2025-10-20 18-30-09 (1).mp4"
                     heading="Brainwave"
                     description="An AI-powered website for chat app"
+                    githubUrl="https://github.com/vashu-1/Brainwave"
                   />
                 </Link>
               </motion.div>
@@ -561,6 +565,7 @@ const HeroSection: FC = () => {
                     video="../../../video/Gymate - Google Chrome 2025-10-20 18-28-26 (1).mp4"
                     heading="Gymate"
                     description="A React based fitness website to track workouts and nutrition"
+                    githubUrl="https://github.com/vashu-1/Gym"
                   />
                 </Link>
               </motion.div>
@@ -576,6 +581,7 @@ const HeroSection: FC = () => {
                     video="../../../video/mdcomputers (1).mp4"
                     heading="MD Computers"
                     description="An e-commerce website for computer parts and accessories"
+                    githubUrl="https://github.com/vashu-1/md-computers"
                   />
                 </Link>
               </motion.div>
@@ -591,6 +597,7 @@ const HeroSection: FC = () => {
                     video="../../../video/Chili & Chaat Restaurant - Modern React.js Frontend Restaurant Website - Google Chrome 2025-10-20 18-29-26 (1).mp4"
                     heading="Chili & Chaat"
                     description="A React based landing restaurant website for online food ordering"
+                    githubUrl="https://github.com/vashu-1/rest-sample1"
                   />
                 </Link>
               </motion.div>
@@ -606,6 +613,7 @@ const HeroSection: FC = () => {
                     video="/video/iic 6.0.mp4"
                     heading="IIC 6.0"
                     description="A Frontend project contains the web design of club in BIT sindri"
+                    githubUrl="https://github.com/vashu-1/IIC_6.0"
                   />
                 </Link>
               </motion.div>
@@ -621,6 +629,7 @@ const HeroSection: FC = () => {
                     video="../../../video/Tomato - Google Chrome 2025-10-20 18-23-48 (1).mp4"
                     heading="Tomato"
                     description="A Frontend project for a restaurant website"
+                    githubUrl="https://github.com/vashu-1/rest-sample2"
                   />
                 </Link>
               </motion.div>
