@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { cn } from "@/utils/cn";
+import React, { useState } from 'react';
+import { cn } from '@/utils/cn';
 
 const OverlayCard = ({
   image,
@@ -27,10 +27,10 @@ const OverlayCard = ({
   return (
     <div
       className={cn(
-        "max-w-sm w-full relative rounded-lg flex-1 transition-transform duration-300 ease-in-out cursor-pointer",
+        'max-w-sm w-full relative rounded-lg flex-1 transition-transform duration-300 ease-in-out cursor-pointer',
         isHovered
-          ? "z-10 md:scale-y-110 md:scale-x-150 border border-sky-900"
-          : "z-0"
+          ? 'z-10 md:scale-y-110 md:scale-x-150 border border-sky-900'
+          : 'z-0'
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -47,7 +47,7 @@ const OverlayCard = ({
             loop
           />
           {!isVideoLoading ? (
-            ""
+            ''
           ) : (
             <div className="text-sky-300 bg-black w-full absolute h-[50vh] flex justify-center items-center rounded-lg transition-all">
               Loading Preview, Please wait...
@@ -68,8 +68,8 @@ const OverlayCard = ({
 
       <div
         className={cn(
-          "relative z-10 w-full h-96 rounded-lg shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
-          "transition-all duration-500"
+          'relative z-10 w-full h-96 rounded-lg shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800',
+          'transition-all duration-500'
         )}
       >
         {!isHovered && (
@@ -82,7 +82,7 @@ const OverlayCard = ({
             </p>
           </div>
         )}
-        
+
         {/* GitHub Button - Shows on hover */}
         {isHovered && githubUrl && (
           <div className="relative z-50 flex justify-end items-end h-full">

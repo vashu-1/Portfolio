@@ -509,6 +509,22 @@ const HeroSection: FC = () => {
                 whileInView={'show'}
                 viewport={{ once: false, amount: 0.1 }}
               >
+                <Link href={'https://mern-todo-lovat-tau.vercel.app/'}>
+                  <OverlayCard
+                    image="../../../../images/todo.jpg"
+                    video="../../../video/todo (1).mp4"
+                    heading="ModakTodo"
+                    description="An MERN based todo app for listing of works."
+                    githubUrl="https://github.com/vashu-1/mern-todo"
+                  />
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
+                initial="hidden"
+                whileInView={'show'}
+                viewport={{ once: false, amount: 0.1 }}
+              >
                 <Link href={'https://mern-chat-frontend-4r6p.onrender.com/'}>
                   <OverlayCard
                     image="https://d33609liqwio9r.cloudfront.net/2025-10-20T19:22:13.471Z-representation-user-experience-interface-design.jpg"
