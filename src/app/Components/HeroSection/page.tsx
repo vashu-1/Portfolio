@@ -549,7 +549,7 @@ const HeroSection: FC = () => {
                     video="../../../video/Food-Flick - Google Chrome 2025-10-21 01-05-16 (1).mp4"
                     heading="Food Delivery"
                     description="An online food delivery application with admin panel"
-                    githubUrl="https://github.com/vashu-1/Food-Delivery"
+                    githubUrl="https://github.com/vashu-1/food_delivery"
                   />
                 </Link>
               </motion.div>
@@ -613,7 +613,7 @@ const HeroSection: FC = () => {
                     video="../../../video/Chili & Chaat Restaurant - Modern React.js Frontend Restaurant Website - Google Chrome 2025-10-20 18-29-26 (1).mp4"
                     heading="Chili & Chaat"
                     description="A React based landing restaurant website for online food ordering"
-                    githubUrl="https://github.com/vashu-1/rest-sample1"
+                    githubUrl="https://github.com/vashu-1/rest_Sample1"
                   />
                 </Link>
               </motion.div>
@@ -645,7 +645,7 @@ const HeroSection: FC = () => {
                     video="../../../video/Tomato - Google Chrome 2025-10-20 18-23-48 (1).mp4"
                     heading="Tomato"
                     description="A Frontend project for a restaurant website"
-                    githubUrl="https://github.com/vashu-1/rest-sample2"
+                    githubUrl="https://github.com/vashu-1/rest_Sample2"
                   />
                 </Link>
               </motion.div>
