@@ -161,7 +161,7 @@ const HeroSection: FC = () => {
                 <EncryptButton
                   buttonText="Resume"
                   driveLink={
-                    'https://drive.google.com/file/d/1Fj_E3QtxYwwRaIdIq9iBHBNq9YoC7s5d/view?usp=drive_link'
+                    'https://drive.google.com/file/d/1BnkVlLSsYPQn9k7EYLjX6is_f5n3jg4L/view?usp=drive_link'
                   }
                 />
               </div>
@@ -259,7 +259,7 @@ const HeroSection: FC = () => {
             initial="hidden"
             whileInView={'show'}
             viewport={{ once: false, amount: 0.1 }}
-            className="h-fit md:h-[100vh] w-full px-8 py-10 md:py-0 lg:pl-40 lg:pr-24 text-white"
+            className="h-fit md:h-fit w-full px-8 py-10 md:pb-10 lg:pl-40 lg:pr-24 text-white"
           >
             <h1 className="flex flex-col justify-center items-center mt-16 md:mt-32">
               <p
@@ -279,8 +279,8 @@ const HeroSection: FC = () => {
               </p>
             </h1>
 
-            <div className="flex justify-between items-center flex-col-reverse md:flex-row gap-8 md:gap-16">
-              <div className="flex justify-between items-left flex-col">
+            <div className="flex justify-between items-center flex-col md:flex-row gap-8 md:gap-16">
+              <div className="flex justify-between items-left flex-col order-1 md:order-1">
                 <h1
                   className="text-lg md:text-xl"
                   onMouseEnter={textEnter}
@@ -300,16 +300,20 @@ const HeroSection: FC = () => {
                 </div>
               </div>
 
-              <Image src={avatar} alt="" className="md:w-[50%]" />
+              <Image
+                src={avatar}
+                alt=""
+                className="md:w-[50%] order-2 md:order-2"
+              />
             </div>
           </motion.section>
 
           {/* WHAT I DO? */}
 
-          <section className="">
-            <h1 className=" flex flex-col justify-center items-center mt-32 text-white">
+          <section className="mt-8 md:mt-20">
+            <h1 className=" flex flex-col justify-center items-center text-white">
               <p
-                className="heading font-outline-2 text-transparent text-5xl md:text-7xl -mb-7"
+                className="heading font-outline-2 text-transparent text-5xl md:text-7xl -mb-2"
                 onMouseEnter={textEnter}
                 onMouseLeave={textLeave}
               >
@@ -487,6 +491,24 @@ const HeroSection: FC = () => {
             </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-10 mt-20 px-6 lg:px-40">
+              <motion.div
+                variants={fadeIn({ direction: 'up', delay: 0.2 })}
+                initial="hidden"
+                whileInView={'show'}
+                viewport={{ once: false, amount: 0.1 }}
+              >
+                <Link
+                  href={'https://ai-recruiter-voice-agent-jenl.vercel.app/'}
+                >
+                  <OverlayCard
+                    image="https://d33609liqwio9r.cloudfront.net/2025-12-08T20:42:25.792Z-scene-with-business-person-working-futuristic-office-job.jpg"
+                    video="../../../../video/AI Recruiter - Smart AI-Powered Interview Platform - Google Chrome 2025-12-09 02-05-08 (1).mp4"
+                    heading="AI-recruiter Voice Agent"
+                    description="An full stack based interview platform using AI voice agent"
+                    githubUrl="https://github.com/vashu-1/AI-recruiter-voice-agent"
+                  />
+                </Link>
+              </motion.div>
               <motion.div
                 variants={fadeIn({ direction: 'up', delay: 0.2 })}
                 initial="hidden"
